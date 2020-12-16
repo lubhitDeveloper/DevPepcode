@@ -1,0 +1,145 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+  }
+  
+  body,
+  html {
+    margin: 0px;
+  }
+
+  .hide{
+    display: none !important;
+  }
+
+  .chat-container{
+    background: lightblue;
+    height: 500px;
+    width: 500px;
+    margin: auto;
+    background-image: url("./Whatsapp-Wallpaper-112\ \(1\).jpg");
+    background-size: contain;
+  }
+
+  .chat-input-name{
+    position: absolute;
+    top: 28%;
+    left: 43.5%;
+    background: #ecf0f1;
+    height: 150px;
+    border-radius: 20px;
+    font-weight: bolder;
+    color: #34495e;
+    padding: 30px 10px 10px 10px;
+    text-align: center;
+  }
+
+  #chat-user{
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    margin: 10px;
+    height: 30px;
+  }
+
+  .join-chat{
+    color:white;
+    background: #34495e;
+    width: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    cursor: pointer;
+    border-radius: 20px;
+    margin: auto;
+  }
+  
+  #signIn{
+    margin-left: 3px;
+  }
+
+  .chat-content{
+    height: 100%;
+  }
+
+  .chat-box{
+    height: 90%;
+    overflow: auto;
+  }
+
+  .chat{
+    clear: both;
+    padding: 6px;
+    border-radius: 10px;
+    margin: 5px;
+  }
+
+  .chat-name{
+    font-weight: bold;
+  }
+
+  .chat-text{
+    
+  }
+
+  .leave{
+    color: white;
+    background: #e74c3c;
+    text-align: center;
+  }
+
+  .join{
+    color:white;
+    background: #3498db;
+    text-align: center;
+  }
+
+  .left{
+    max-width: 300px;
+    min-width: 150px;
+    background: white;
+    float: left;
+    color: #34495e;
+  }
+
+  .right{
+    max-width: 300px;
+    min-width: 150px;
+    background: #34495e;
+    float: right;
+    color: white;
+  }
+
+  .chat-input{
+    background: white;
+    width: 90%;
+    border-radius: 10px;
+    margin: auto;
+    display: flex;
+    height: 6%;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .chat-input input{
+    outline: none;
+    border: none;
+    height: 100%;
+    width: 85%;
+  }
+
+  .fas{
+    
+  }
+
+  .disable{
+    color: lightgrey;
+  }
+
+  .send{
+    color: lightgreen;
+    cursor: pointer;
+  }
+
+  

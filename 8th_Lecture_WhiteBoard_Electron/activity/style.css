@@ -1,0 +1,169 @@
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  margin: 0px;
+}
+
+.tools {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.content {
+  height: calc(100vh - 100px);
+  background: white;
+}
+
+#canvas {
+  /* height: 100%;
+    width: 100%;
+    background: cadetblue; */
+}
+
+.toolbox {
+  display: flex;
+  justify-content: space-evenly;
+  width: 80%;
+  height: 80%;
+  align-items: center;
+  border-radius: 20px;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+}
+.tool {
+  position: relative;
+  height: 50px;
+}
+.tool img {
+  height: 100%;
+}
+.red {
+  background: red;
+}
+.yellow {
+  background: yellow;
+}
+.blue {
+  background: blue;
+}
+.black {
+  background: black;
+}
+
+.tool-options {
+  height: 100px;
+  width: 160px;
+  /* border: 1px solid; */
+  position: absolute;
+  background: lightgray;
+  border-radius: 10px;
+  top: 65px;
+  left: -60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.pencil-colors {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.pencil-colors div {
+  height: 30px;
+  width: 30px;
+  border-radius: 20px;
+}
+
+.hide {
+  display: none;
+}
+
+.active-tool {
+  background: lightgray;
+  height: 60px;
+  padding: 7px;
+  border-radius: 25px;
+}
+.sticky {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  /* background: aqua; */
+  /* height: 200px; */
+  border: 1px solid lightgray;
+  width: 233px;
+}
+
+.sticky-header {
+  background: aliceblue;
+  height: 36px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-bottom: 1px solid lightgray;
+  width:100%;
+}
+.minimize {
+  height: 22px;
+  background: lightgreen;
+  width: 22px;
+  border-radius: 10px;
+  margin-right: 5px;
+}
+.close {
+  height: 22px;
+  background: lightcoral;
+  width: 22px;
+  border-radius: 10px;
+  margin-right: 5px;
+}
+.stickybox {
+  outline: none;
+  border: none;
+}
+.photo{
+  width: 100%;
+  object-fit: contain;
+}
+
+@keyframes tool{
+  0%{
+    opacity: 0;
+    transform: scale(0);
+  }
+  100%{
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.add-animation{
+  animation-name: tool;
+  animation-duration: 0.5s;
+}
+
+.tool-button{
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+    background: white;
+    height: 59%;
+    width: 4%;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 25px;
+}
+
+.fas{
+  font-size: 30px;
+    color: lightgray;
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="tools">
+        <div class="tool-button">
+            <i class="fas fa-times" id="close-tool"></i>
+            <i class="fas fa-bars hide" id="open-tool"></i>
+        </div>
+        <div class="toolbox add-animation">
+            <div class="tool active-tool" id="pencil">
+                <img src="./resources-master/resources-master/NewIcons/Black_Pencil.svg" alt="">
+                <div class="tool-options hide" id="pencil-options">
+                    <input type="range" name="" id="pencilSize" value="1" min="1" max="40">
+                    <div class="pencil-colors">
+                        <div class="red"></div>
+                        <div class="yellow"></div>
+                        <div class="blue"></div>
+                        <div class="black"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="tool" id="eraser">
+                <img src="./resources-master/resources-master/NewIcons/Eraser.svg" alt="">
+                <div class="tool-options hide" id="eraser-options">
+                    <input type="range" name="" id="eraserSize" value="1" min="1" max="40">
+                </div>
+            </div>
+            <div class="tool" id="sticky">
+                <img src="./resources-master/resources-master/NewIcons/StickyNote.svg" alt="">
+            </div>
+            <div class="tool" id="upload">
+                <img src="./resources-master/resources-master/NewIcons/Photo.svg" alt="">
+                <input type="file" name="" id="photo-upload" style="display: none;">
+            </div>
+            <div class="tool" id="download">
+                <img src="./resources-master/resources-master/NewIcons/Download.svg" alt="">
+            </div>
+            <div class="tool" id="undo">
+                <img src="./resources-master/resources-master/NewIcons/Undo.svg" alt="">
+            </div>
+            <div class="tool" id="redo">
+                <img src="./resources-master/resources-master/NewIcons/Redo.svg" alt="">
+            </div>
+        </div>
+
+    </div>
+    <div class="content">
+        <canvas id="canvas"></canvas>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.3/socket.io.js" integrity="sha512-Jr0UIR/Q8MUX+93zjDOhuDUKLqJZObtwpkLJQcR9qMaLgL0thet39IORuavUaZFkZ8a4ktrUsKPM9mf5LWMduA==" crossorigin="anonymous"></script>
+<script>
+ const socket = io.connect("http://localhost:3000");
+</script>
+<script src="./script.js"></script>
+<script src="./tools.js"></script>
+<script src="./sticky.js"></script>
+<script src="./img.js"></script>
+<script src="./createSticky.js"></script>
+<script src="./animation.js"></script>
+<script src="./socket.js"></script>
+</html>

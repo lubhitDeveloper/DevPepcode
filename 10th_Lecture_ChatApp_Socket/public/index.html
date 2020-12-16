@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-input-name">
+            ENTER YOUR NAME
+            <br>
+            <input type="text" id="chat-user">
+            <div class="join-chat">Join Chat<i class="fas fa-sign-in-alt" id="signIn"></i></div>
+        </div>
+        <div class="chat-content hide">
+            <div class="chat-box">
+                <!-- <div class="chat right">
+                    <div class="chat-name">Lubhit</div>
+                    <div class="chat-text">Hello Guys!!</div>
+                </div>
+                <div class="chat join">Lubhit joined the chat !</div>
+                <div class="chat left">
+                    <div class="chat-name">Star</div>
+                    <div class="chat-text">Hi!</div>
+                </div>
+                <div class="chat leave">Lubhit left the chat !</div> -->
+            </div>
+
+            <div class="chat-input">
+                <input type="text"  id="chat-input">
+                <div class="send"><i class="fas fa-paper-plane"></i></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js" integrity="sha512-aMGMvNYu8Ue4G+fHa359jcPb1u+ytAF+P2SCb+PxrjCdO3n3ZTxJ30zuH39rimUggmTwmh2u7wvQsDTHESnmfQ==" crossorigin="anonymous"></script>
+    <script>
+        const socket= io.connect("http://localhost:3000");
+    </script>
+    <script src="./script.js"></script>
+    <script src="./socket.js"></script>
+</body>
+</html>
