@@ -10,7 +10,7 @@
 }
 
 .showcase{
-    background-image: linear-gradient(rgba(3, 3, 3, 0.349) , rgb(3, 3, 3)), url("./pexels-ella-olsson-1640770.jpg");
+    background-image: linear-gradient(rgba(3, 3, 3, 0.349) , rgb(3, 3, 3)), url("../images/pexels-ella-olsson-1640770.jpg");
     height: 100vh;
     background-size: 100vw;
     background-attachment: fixed;
