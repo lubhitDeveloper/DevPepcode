@@ -1,97 +1,91 @@
-const users= require("../Model/usersModel.json");
-const {v4 : uuidv4}= require("uuid");
-const fs= require("fs");
-const path= require("path");
+// const users= require("../Model/usersModel.json");
+// const {v4 : uuidv4}= require("uuid");
+// const fs= require("fs");
+// const path= require("path");
+const userModel= require("../Model/usersModel");
 
-function getAllUsers(req,res){
-    if(users.length){
+async function getAllUsers(req,res){
+    try{
+        let users= await userModel.find({});
         res.status(200).json({
-            message:"Succesfully got all users",
-            data: users
-        }) 
+            message:"Got all users successfully !!",
+            data : users
+          })
     }
-    else{
-        res.status(200).json({
-            message:"NO USERS FOUND !!"
-        })
-    }
-
-}
-
-function createUser(req,res){
-    let user= req.body;
-    user.id= uuidv4();
-    users.push(user);
-    let usersPath = path.join(__dirname, '..', 'Model', 'usersModel.json');
-    fs.writeFileSync(usersPath , JSON.stringify(users));
-    res.status(201).json({
-        message:"Succesfully created a user !",
-        data: users
-    })
-}
-
-function getUserById(req, res){
-    let {id}= req.params;
-    let filteredUsers= users.filter(function(user){
-        return user.id == id;
-    })
-    if(filteredUsers.length){
-        res.status(200).json({
-            message: "Successfully got user id",
-            data: filteredUsers[0]
-        })
-    }
-    else{
-        res.status(404).json({
-            message: "USER NOT FOUND !!"
-        })
+    catch(error){
+        res.status(501).json({
+            message:"No Users Found !!",
+            error
+          })
     }
 }
 
-function updateUserbyId(req, res){
-    let {id}= req.params;
-    let updateUserObj= req.body;
-
-    let filteredUser = users.filter(function(user){
-        return user.id == id;
-    })
-    if(filteredUser.length){
-        let user= filteredUser[0];
-        for(key in updateUserObj){
-            user[key] = updateUserObj[key];
-        }
-        let usersPath = path.join(__dirname, '..', 'Model', 'usersModel.json');
-        fs.writeFileSync(usersPath , JSON.stringify(users));
+async function createUser(req,res){
+   try{
+        let sentUser= req.body;
+        let user= await userModel.create(sentUser);
         res.status(200).json({
-            message: "User Updated !",
-            data: users
-        })
+            message:"Created a user successfully !!",
+            data : user
+          })
+   }
+   catch(error){
+    res.status(200).json({
+        message:"No User Created !!",
+        error: error.errors.email.message
+      })
+   }
+}
+
+async function getUserById(req, res){
+    try{
+        let {id}= req.params;
+        let user= await userModel.findById(id);
+        res.status(200).json({
+            message:"Succesfully got user by id !!",
+            data : user
+          })
     }
-    else{
-        res.status(404).json({
-            message: "User Not Found !"
-        })
+    catch(error){
+        res.status(501).json({
+            message:"No User Found by id !!",
+            error
+          })
     }
 }
 
-function deleteUserById(req, res){
-    let {id}= req.params;
-
-    let filteredUsers= users.filter(function(user){
-        return user.id != id;
-    })
-    if(filteredUsers.length == users.length){
-        res.status(404).json({
-            message: "User Not Found !"
-        })
-    }
-    else{
-        let usersPath = path.join(__dirname, '..', 'Model', 'usersModel.json');
-        fs.writeFileSync(usersPath , JSON.stringify(filteredUsers));
-
+async function updateUserbyId(req, res){
+    try{
+        let {id}= req.params;
+        let updateUserObj= req.body;
+        let updatedUser= await userModel.findByIdAndUpdate(id, updateUserObj, {new : true});
         res.status(200).json({
-            message:"User Deleted Succesfully !",
-    })
+            message:"Succesfully updated a user !!",
+            data : updatedUser
+          })
+    }
+    catch(error){
+        res.status(501).json({
+            message:"No User updated !!",
+            error
+          })
+    }
+}
+
+async function deleteUserById(req, res){
+    try{
+        let {id}= req.params;
+        let deletedUser= await userModel.findByIdAndDelete(id);
+        res.status(200).json({
+            message:"Succesfully deleted a user !!",
+            data : deletedUser
+          })
+    }
+    catch(error){
+        res.status(501).json({
+            message:"No User Deleted !!",
+            error
+          })
     }
 }
 
