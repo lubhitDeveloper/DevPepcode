@@ -1,8 +1,11 @@
 const mongoose= require("mongoose");
+const { DB_LINK } = require("../config/secrets");
 
-mongoose.connect("mongodb+srv://lubhit123:lubhit123@cluster0.ugny9.mongodb.net/foodplan?retryWrites=true&w=majority",
+mongoose.connect(
+    DB_LINK,
  {useNewUrlParser: true, useUnifiedTopology: true}
- ).then((db)=> {
+ )
+ .then((db)=> {
      console.log("Connected to db !!!");
  });
 

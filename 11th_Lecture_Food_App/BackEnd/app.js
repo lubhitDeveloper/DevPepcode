@@ -7,7 +7,7 @@ const app= express();
 app.use(express.json());
 //app.httpmethod(appRoute, cb function(request, response))
 app.use("/api/plans", planRouter);
-app.use("/api/users", userRouter);
+app.use("/api/user", userRouter);
 
 
 app.listen(3000, function(){

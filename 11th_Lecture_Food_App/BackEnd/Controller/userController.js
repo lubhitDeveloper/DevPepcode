@@ -39,7 +39,7 @@ async function createUser(req,res){
 
 async function getUserById(req, res){
     try{
-        let {id}= req.params;
+        let id= req.id;
         let user= await userModel.findById(id);
         res.status(200).json({
             message:"Succesfully got user by id !!",
@@ -56,9 +56,15 @@ async function getUserById(req, res){
 
 async function updateUserbyId(req, res){
     try{
-        let {id}= req.params;
-        let updateUserObj= req.body;
-        let updatedUser= await userModel.findByIdAndUpdate(id, updateUserObj, {new : true});
+        let id= req.id;
+        let updateUserObj= req.body.updateUserObj;
+        let user= await userModel.findById(id);
+
+        for(key in updateUserObj){
+            user[key]= updateUserObj[key];
+        }
+        let updatedUser= await user.save();
+
         res.status(200).json({
             message:"Succesfully updated a user !!",
             data : updatedUser
@@ -74,12 +80,19 @@ async function updateUserbyId(req, res){
 
 async function deleteUserById(req, res){
     try{
-        let {id}= req.params;
+        let id= req.id;
         let deletedUser= await userModel.findByIdAndDelete(id);
+        if(deletedUser){
         res.status(200).json({
             message:"Succesfully deleted a user !!",
             data : deletedUser
           })
+        }
+        else{
+            res.status(501).json({
+                message:"User Not Found !"
+            })
+        }
     }
     catch(error){
         res.status(501).json({

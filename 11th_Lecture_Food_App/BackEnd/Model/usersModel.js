@@ -1,48 +1,50 @@
 const mongoose= require("mongoose");
+const { DB_LINK } = require("../config/secrets");
 
 mongoose.connect
-("mongodb+srv://lubhit123:lubhit123@cluster0.ugny9.mongodb.net/foodplan?retryWrites=true&w=majority", 
+(DB_LINK, 
 {useNewUrlParser: true, useUnifiedTopology: true}
-).then((db)=>{
+)
+.then((db)=>{
     console.log("Db Connected Successfully");
 });
 
 let userSchema= new mongoose.Schema({
-    name: {
-        type: String,
-        required: true
-    },
-    email: {
-        type: String,
-        required: true,
-        unique: true
-    },
-    password: {
-        type: String,
-        required: true,
-        min: [6, 'Password must be of atleast 6 characters']
-    },
-    confirmPassword: {
-        type: String,
-        required: true,
-        min: [6, 'Password must be of atleast 6 characters'],
-        validate: {
-            validator: function(){
-                return this.password == this.confirmPassword;
-            },
-            message: "Passwords don't match"
+    name : {
+        type:String,
+        required:true
+      },
+      email : {
+        type:String ,
+        required:true,
+        unique:true
+      },
+      password:{
+        type:String,
+        minlength:[6 , "Password must be greater than 6 characters"],
+        required:true
+      } ,
+      confirmPassword:{
+        type:String,
+        minlength:[6 , "Password must be greater than 6 characters"],
+        validate : {
+          validator: function(){
+            return this.password == this.confirmPassword;
+          } ,
+          message:"Password didn't matched !!"
         }
-    },
-    role: {
-        type: String,
-        enum: ["admin", "user", "restaurent owner", "delivery boy"],
-        default: "user"
-    }
+      },
+      role:{
+        type:String,
+        enum:["admin" , "user" , "restaurant owner" , "delivery boy"],
+        default:"user"
+      }
 })
 
-// userSchema.pre("create", function(){
-//     this.confirmPassword= undefined;
-// })
+// it will run before create is called on userModel
+userSchema.pre("save", function(){
+    this.confirmPassword= undefined;
+})
 
 const userModel= mongoose.model("usercollection", userSchema);
 

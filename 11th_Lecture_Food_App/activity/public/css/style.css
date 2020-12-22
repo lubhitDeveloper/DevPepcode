@@ -1,8 +1,9 @@
 *{
     box-sizing: border-box;
-    margin:0px;
-    padding:0px;
+    margin: 0px;
+    padding: 0px;
     font-family: 'Lato', sans-serif;
+    color: gray;
 }
 
 #changing-text{
@@ -32,7 +33,6 @@
     display: flex;
     width: 300px;
     height: 50px;
-    /* background: mediumblue; */
     justify-content: space-evenly;
 }
 
@@ -107,4 +107,112 @@
 
 .fixed a{
     color: #F63854;
+}
+
+.feature-container{
+    padding: 2rem 2rem;
+}
+
+.feature-container h2{
+    font-size: 250%;
+    text-align: center;
+}
+
+.all-features{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 65px;
+    margin-bottom: 65px;
+}
+
+.feature{
+    box-shadow: 0 10px 22px 10px rgba(27, 38, 49, 0.1);
+    min-height: 300px;
+    width: 30%;
+    padding: 20px;
+    transition: transform 0.3s;
+    transform: scale(0.9);
+}
+
+.feature:hover{
+    transform: scale(1.05);
+}
+
+.feature h3{
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 125%;
+}
+
+.icon{
+    display: flex;
+    margin-bottom: 18px;
+    font-size: 35px;
+    color: #f63854;
+    justify-content: center;
+    align-items: center;
+}
+
+.feature-para{
+    line-height: 180%;
+    font-size: 17px;
+}
+
+.steps-container{
+    background-color: rgb(244, 244, 244);
+    padding: 2rem 2rem;
+}
+
+
+.steps-container h2{
+    font-size: 250%;
+    text-align: center;
+}
+
+.all-steps{
+    display: flex;
+    min-height: 500px;
+}
+
+.step-img{
+    display: flex;
+    width: 30%;
+    align-items: center;
+    justify-content: center;
+}
+
+.step-img img{
+    width: 70%;
+}
+
+.steps-to-follow{
+    width: 50%;
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+    font-size: 125%;
+    word-spacing: 5px;
+}
+
+.step{
+    display: flex;
+    align-items: center;
+}
+
+.step-no{
+    border: 3px solid #f63854;
+    border-radius: 50%;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5rem;
+    margin: 10px;
+    color: #f63854;
+    font-size: 140%;
+}
+
+.step-para{
+    margin: 30px;
+    width: 100%;
 }

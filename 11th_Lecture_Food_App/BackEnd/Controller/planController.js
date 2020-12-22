@@ -57,9 +57,15 @@ async function getPlanById(req, res){
 
 async function updatePlanById(req,res){
     try{
-        let {id}= req.params;
-        let updateObj= req.body;
-        let updatedPlan= await planModel.findByIdAndUpdate(id, updateObj, {new: true});
+        let id= req.params.id;
+        let updateObj= req.body.updateObj;
+        //let updatedPlan= await planModel.findByIdAndUpdate(id, updateObj, {new: true});
+        let plan= await planModel.findById(id);
+        for(key in updateObj){
+            plan[key] = updateObj[key];
+        }
+        let updatedPlan= await plan.save();
+
         res.status(200).json({
             message:"Updated Plan successfully !!",
             data : updatedPlan
@@ -68,7 +74,7 @@ async function updatePlanById(req,res){
     catch(error){
         res.status(501).json({
             message:"Failed to update a plan !!",
-            error
+            error: error.errors.discount.message
           })
     }
 }
