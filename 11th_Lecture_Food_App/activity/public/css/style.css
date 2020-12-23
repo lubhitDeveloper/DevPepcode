@@ -179,6 +179,7 @@
     width: 30%;
     align-items: center;
     justify-content: center;
+    margin: auto;
 }
 
 .step-img img{
@@ -215,4 +216,65 @@
 .step-para{
     margin: 30px;
     width: 100%;
+}
+
+.reviews-container{
+    background-image: linear-gradient(rgba(3, 3, 3, 0.349) , rgb(3, 3, 3)), url("../images/pexels-ella-olsson-1640770.jpg");
+    padding: 3rem 2rem 2rem 2rem;
+    min-height: 100vh;
+    background-size: 100vw;
+    background-attachment: fixed;
+}
+
+.reviews-container h2{
+    font-size: 250%;
+    text-align: center;
+}
+
+.all-reviews{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 65px;
+    margin-bottom: 65px;
+}
+
+.review{
+    box-shadow: 0 10px 22px 10px rgba(27, 38, 49, 0.1);
+    min-height: 300px;
+    width: 30%;
+    padding: 20px;
+    transition: transform 0.3s;
+    transform: scale(0.9);
+    background: lightcyan;
+    text-align: center;
+}
+
+.review:hover{
+    transform: scale(1);
+}
+
+.review h3{
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 170%;
+    margin: 15px;
+    font-weight: lighter;
+    color: black;
+}
+
+.review-para{
+    line-height: 180%;
+    font-size: 17px;
+}
+
+.review-stars{
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 130%;
+}
+
+.star{
+    color: #f63854;
 }
