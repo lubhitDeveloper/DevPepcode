@@ -1,0 +1,27 @@
+doctype html
+html
+ head
+  title pug intro
+ body
+  h1 HELLO
+  p Hi i am a p tag
+  p.
+   hey i am first
+   hey i am second
+  p
+   |hey yo 1
+   |hey yo 2
+  .myclass hey i am div with class
+  #myid hey i am div with id
+  h1.myclassh1
+  #attributes
+   a(href="https://www.google.com") Go to google.com
+   img(src= "")
+  -const classes= ["h1", "sm", "yellow"];
+  p(class=classes)
+  -const items=["hello", "go", "went"];
+  ul
+   for item in items
+    li= item
+   else
+    li No items

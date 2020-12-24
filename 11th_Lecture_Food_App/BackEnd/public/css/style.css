@@ -113,6 +113,15 @@
     padding: 2rem 2rem;
 }
 
+h2::after {
+    content: "";
+    color: #f63854;
+    display: block;
+    border-bottom: solid;
+    margin: 2rem 31rem;
+    margin-bottom: 3rem;
+  }
+
 .feature-container h2{
     font-size: 250%;
     text-align: center;
@@ -277,4 +286,107 @@
 
 .star{
     color: #f63854;
+}
+
+.subscription-container{
+    padding: 2rem 2rem;
+    min-height: 100vh;
+    background: #f4f4f4;
+}
+
+.subscription-container h2{
+    font-size: 250%;
+    text-align: center;
+}
+
+.all-subscriptions{
+    display: flex;
+    justify-content: space-evenly;
+    min-height: 500px;
+    margin-top: 65px;
+    margin-bottom: 65px;
+}
+
+.subscription{
+    min-height: 300px;
+    min-width: 28%;
+    padding: 20px;
+    transform: scale(0.8);
+    border: 1px solid;
+    border-radius: 40px;
+}
+
+.active{
+    box-shadow: 0 10px 22px 10px rgba(27, 38, 49, 0.1);
+    transform: scale(0.95);
+}
+
+.subscription-header{
+    border-bottom: 1px solid;
+    margin-bottom: 10%;
+}
+
+.subscription-header h3{
+    text-align: center;
+    font-size: 170%;
+    margin: 15px;
+}
+
+.subscription-pricing{
+    font-size: 125%;
+    margin: 10px;
+}
+
+.sub-pricing{
+    font-size: 400%;
+    color: #f63854;
+}
+
+.pricing-para{
+    text-align: center;
+    margin-bottom: 10%;
+}
+
+.subscription-features{
+    font-size: 125%;
+    border-bottom: 1px solid;
+    padding: 5px;
+}
+
+.feature-ul{
+
+}
+
+.feature-li{
+    margin-bottom: 13px;
+    list-style: none;
+}
+
+.feature-li i{
+    margin-right: 10px;
+    color: #f63854;
+}
+
+.subscription-button{
+    border: 1px solid #f63854;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 30px;
+    width: 50%;
+    position: absolute;
+    bottom: -4%;
+    left: 26%;
+    background: #f63854;
+    transition: transform 0.3s;
+}
+
+.subscription-button:hover{
+    transform: scale(1.2);
+}
+
+.sub-btn{
+    text-decoration: none;
+    color: white;
 }
