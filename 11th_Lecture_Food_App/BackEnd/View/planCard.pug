@@ -1,0 +1,26 @@
+.subscription
+            .subscription-header
+                h3 #{plan.name}
+                .subscription-pricing
+                    span.sub-pricing $#{plan.price}
+                    | /month
+                    p.pricing-para That’s only $#{Math.ceil(plan.price/plan.duration)} per meal
+            .subscription-features
+                ul.feature-ul
+                    li.feature-li
+                        i.fas.fa-check-circle
+                        | 1 meal every day
+                    li.feature-li
+                        i.fas.fa-check-circle
+                        | Order 24/7
+                    li.feature-li
+                        i.fas.fa-check-circle
+                        | Access to newest creations
+                    li.feature-li
+                        i.fas.fa-check-circle
+                        | Free delivery
+                    li.feature-li
+                        i.fas.fa-check-circle
+                        | Rated #{plan.ratings} out of 5    
+                .subscription-button
+                    a.sub-btn(href='#') I'm hungry

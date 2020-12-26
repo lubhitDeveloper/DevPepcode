@@ -1,0 +1,9 @@
+extends base.pug
+block content
+ .subscription-container
+  .all-subscriptions
+   each plan in plans
+    include planCard.pug
+        
+
+       

@@ -1,3 +1,194 @@
 extends base.pug
+block header
+ .showcase
+  include header.pug
+  .showcase-content
+    h1 MEAL PLANS
+    h1
+        | FOR 
+        span#changing-text
+    .showcase-buttons
+        .btn Book Now
+        .btn-fade Show Me More
 block content
- h1 I am Homepage
+ .feature-container
+    h2 AWESOME FEATURES
+    .all-features
+        .feature
+            i.far.fa-calendar-plus.icon
+            h3 365 DAYS/YEAR
+            p.feature-para
+                | Never cook again! We really mean that. Our subscription plans include up to 365 days/year coverage. You can
+                | also choose to order more flexibly if that's your style.
+        .feature
+            i.fas.fa-shipping-fast.icon
+            h3 30 MINUTES OR FREE
+            p.feature-para
+                | You're only twenty minutes away from your delicious and super healthy meals delivered right to your home. We
+                | work with the best chefs in each town to ensure that you're 100% happy.
+        .feature
+            i.fas.fa-carrot.icon
+            h3 100% ORGANIC
+            p.feature-para
+                | All our vegetables are fresh, organic and local. Animals are raised without added hormones or antibiotics.
+                | Good for your health, the environment, and it also tastes better!
+ .steps-container
+    h2 STEPS TO FOLLOW
+    .all-steps
+        .step-img
+            img(src='./images/pexels-pineapple-supply-co-1071878.jpg' alt='Food')
+        .steps-to-follow
+            .step
+                .step-no 1
+                p.step-para Choose the subscription plan that best fits your needs and sign up today.
+            .step
+                .step-no 2
+                p.step-para
+                    | Order your delicious meal using our mobile app or website. Or you can even call us!
+            .step
+                .step-no 3
+                p.step-para Enjoy your meal after less than 20 minutes. See you the next time!
+ .reviews-container
+    h2 REVIEWS
+    .all-reviews
+        .review
+            h3 Lubhit Malhotra
+            p.review-para
+                | Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi iure odio, quod nisi facilis commodi ut sunt ipsam, magnam eius repellat perferendis porro, iste voluptas!
+            .review-stars
+                i.fas.fa-star.star
+                i.fas.fa-star.star
+                i.fas.fa-star.star
+                i.fas.fa-star.star
+                i.fas.fa-star.star
+        .review
+            h3 Manav Gandhi
+            p.review-para
+                | Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi iure odio, quod nisi facilis commodi ut sunt ipsam, magnam eius repellat perferendis porro, iste voluptas!
+            .review-stars
+                i.fas.fa-star.star
+                i.fas.fa-star.star
+                i.fas.fa-star.star
+                i.fas.fa-star.star
+                i.fas.fa-star.star
+        .review
+            h3 JATIN MALHOTRA
+            p.review-para
+                | Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi iure odio, quod nisi facilis commodi ut sunt ipsam, magnam eius repellat perferendis porro, iste voluptas!
+            .review-stars
+                i.fas.fa-star.star
+                i.fas.fa-star.star
+                i.fas.fa-star.star
+                i.fas.fa-star.star
+                i.fas.fa-star.star
+ .subscription-container
+    h2 START EATING HEALTHY TODAY
+    .all-subscriptions
+        .subscription
+            .subscription-header
+                h3 PREMIUM
+                .subscription-pricing
+                    span.sub-pricing $199
+                    | /month
+                    p.pricing-para That’s only $6.63 per meal
+            .subscription-features
+                ul.feature-ul
+                    li.feature-li
+                        i.fas.fa-check-circle
+                        | 1 meal every day
+                    li.feature-li
+                        i.fas.fa-check-circle
+                        | Order 24/7
+                    li.feature-li
+                        i.fas.fa-check-circle
+                        | Access to newest creations
+                    li.feature-li
+                        i.fas.fa-check-circle
+                        | Free delivery
+                .subscription-button
+                    a.sub-btn(href='#') I'm hungry
+        .subscription.active
+            .subscription-header
+                h3 PREMIUM
+                .subscription-pricing
+                    span.sub-pricing $199
+                    | /month
+                    p.pricing-para That’s only $6.63 per meal
+            .subscription-features
+                ul.feature-ul
+                    li.feature-li
+                        i.fas.fa-check-circle
+                        | 1 meal every day
+                    li.feature-li
+                        i.fas.fa-check-circle
+                        | Order 24/7
+                    li.feature-li
+                        i.fas.fa-check-circle
+                        | Access to newest creations
+                    li.feature-li
+                        i.fas.fa-check-circle
+                        | Free delivery
+                .subscription-button
+                    a.sub-btn(href='#') I'm hungry
+        .subscription
+            .subscription-header
+                h3 PREMIUM
+                .subscription-pricing
+                    span.sub-pricing $199
+                    | /month
+                    p.pricing-para That’s only $6.63 per meal
+            .subscription-features
+                ul.feature-ul
+                    li.feature-li
+                        i.fas.fa-check-circle
+                        | 1 meal every day
+                    li.feature-li
+                        i.fas.fa-check-circle
+                        | Order 24/7
+                    li.feature-li
+                        i.fas.fa-check-circle
+                        | Access to newest creations
+                    li.feature-li
+                        i.fas.fa-check-circle
+                        | Free delivery
+                .subscription-button
+                    a.sub-btn(href='#') I'm hungry
+ .contact-us-container
+    h2 CONTACT US
+    .contact-parent
+        .contact-child-video
+            video.contact-video(autoplay='' muted='' loop='')
+                source(src='https://media.giphy.com/media/1zRfptqfbu6bnux7Xy/giphy.mp4' type='video/mp4')
+                |                     Your browser is not supported
+        .contact-child-form
+            form(action='')
+                .input
+                    .input-heading
+                        | Name
+                    input#name(type='text' name='name' placeholder='Your Name' required='')
+                .input
+                    .input-heading
+                        | Email
+                    input#email(type='email' name='email' placeholder='Your Email' required='')
+                .input
+                    .input-heading
+                        | How did you find us ?
+                    select#input-select(name='' required='')
+                        option(value='' selected='' disabled='' hidden='') Choose here
+                        option(value='') Friends or Relatives
+                        option(value='') Gym
+                        option(value='') Advertisment
+                        option(value='') College
+                        option(value='') Others
+                .input
+                    .input-heading
+                        | Drop us your feedback !!
+                    textarea#input-textarea(name='' placeholder='Your Feedback')
+                .input
+                    input.checkbox(type='checkbox' name='email' required='')
+                    span.checkbox-conditions
+                        | I have read and agreed with all the Privacy Policy and
+                        | Terms Conditions
+                .button-contact
+                    input#submit(type='submit' value='Send Message')
+                    // <a href="#" class="contact-btn">SEND MESSAGE</a>

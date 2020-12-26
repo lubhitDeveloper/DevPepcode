@@ -101,7 +101,7 @@
 .fixed{
     background: white;
     width: 100%;
-    position: fixed;
+    /* position: fixed; */
     z-index: 2;
 }
 
@@ -433,7 +433,7 @@ h2::after {
     font-size: 110%;
 }
 
-#name,#email,#input-select,#input-textarea{
+#name,#email,#input-select,#input-textarea,#password,#confirm-password{
     background-color: rgb(241, 237, 237);
     border: none;
     outline: none;

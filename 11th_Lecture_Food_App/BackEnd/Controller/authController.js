@@ -14,15 +14,15 @@ async function signup(req, res){
           role:user.role
         });
         //console.log(newUser);
-        res.status(201).json({
+        res.status(200).json({
             message:"Succesfully Signed up !!",
             data: newUser
         })
     }
     catch(error){
-        res.status(501).json({
+        res.status(200).json({
             message:"Sign Up Failed !!",
-            error: error.errors.password.message
+            error: error.errors.confirmPassword.message
         })
     }
 }
@@ -36,26 +36,26 @@ async function login(req, res){
             if(user.password == password){
                 //token ban na chahie yhn pr
                 const token= jwt.sign({id: user["_id"]}, SECRET_KEY);
-                res.status(201).json({
+                res.status(200).json({
                     message:"Succesfully Logged In !!",
                     data: loggedInUser[0],
                     token
                 })
             }
             else{
-                res.status(501).json({
+                res.status(200).json({
                     message:"Email and Password didn't matched !!",
                 })
             }
         }
         else{
-            res.status(501).json({
+            res.status(200).json({
                 message:"No User found signup first !!",
             })
         }
     }
     catch(error){
-        res.status(501).json({
+        res.status(200).json({
             message:"Login Failed !!",
             error
         })
