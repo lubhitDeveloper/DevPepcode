@@ -1,0 +1,30 @@
+extends base
+block header
+    .showcase
+        include header
+        .forgot.login-container
+            h2 Forgot Your Password ?
+            .login-main
+                p.forgot-para
+                    | Change your password in three easy steps. This will help you to secure your password !
+                ol.forgot-ol
+                    li.forgot-li Enter your email address below.
+                    li.forgot-li Our system will send you a temporary link.
+                    li.forgot-li Use the link to reset password.
+                p.forgot-email-para Enter your email address
+                .forgot-in.input-login
+                    .icon-login
+                        i.fas.fa-user
+                    input#login-email(type='email' placeholder='Email' required='')
+                p.forgot-email-p
+                    | Enter the email address you used during sign up on Fooderia . Then we will email a link to this address.
+                .button-login
+                    // <button class="login-btn">Log In</button>
+                    input#forgot-btn(type='submit' value='SEND RECOVERY EMAIL')
+                    // <a href="#" class="contact-btn">SEND MESSAGE</a>
+            .remember.login-signup
+                p.login-signup-para
+                    | Just Remembered?
+                    a.login-signup-btn(href='http://localhost:3000/login') Login
+block scripts
+ script(src='./js/forgotPass.js')

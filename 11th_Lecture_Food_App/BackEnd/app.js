@@ -4,9 +4,11 @@ const userRouter = require("./Router/userRouter");
 const viewRouter = require("./Router/viewRouter");
 const path= require("path");
 const app= express();
+const cookieParser= require("cookie-parser");
 
 app.use(express.json());
-app.use(express.static("public"));
+app.use(cookieParser());
+app.use(express.static(__dirname + "/public"));
 //app.httpmethod(appRoute, cb function(request, response))
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "View"));

@@ -1,0 +1,28 @@
+extends base
+block style
+ link(rel='stylesheet' href='../css/style.css')
+ link(rel='stylesheet' href='../css/style2.css')
+block header
+    .showcase
+        include header
+        .forgot.login-container
+            h2 Password Reset Confirm
+            .login-main
+                p.forgot-para Please enter your new password.
+                p.reset.forgot-email-para New Password
+                .forgot-in.input-login
+                    .icon-login
+                        i.fas.fa-lock
+                    input#signup-password(type='password' placeholder='Password' required='')
+                    .show-hide
+                        span.show-text SHOW
+                p.forgot-email-p Your password must contain atleast 6 characters.
+                p.reset.forgot-email-para New Password Confirmation
+                .forgot-in.input-login
+                    .icon-login
+                        i.fas.fa-lock
+                    input#signup-cfpassword(type='password' placeholder='Confirm Password' required='')
+                .button-login
+                    input#forgot-btn(type='submit' value='RESET PASSWORD')
+block scripts
+ script(src='../js/resetPass.js')

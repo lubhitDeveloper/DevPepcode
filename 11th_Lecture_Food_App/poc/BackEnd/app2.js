@@ -6,17 +6,18 @@ const nodemailer= require("nodemailer");
 async function sendEmail(){
     try{
         const transporter= nodemailer.createTransport({
-            host: "smtp.mailtrap.io",
-            port: 2525,
+            service: "gmail",
+            host: "smtp.gmail.com",
+            secure: true,
             auth: {
-                user: "63c136da27ea8f",
-                pass: "385bb745824f90"
+                user: "lubhitmalhotra12@gmail.com",
+                pass: "ceefgckbargggjik"
              }
         })
 
         await transporter.sendMail({
-            from: "lubhitmalhotra@gmail.com",
-            to: "avv@aa.com",
+            from: "lubhitmalhotra12@gmail.com",
+            to: "lubhitmalhotra1122@gmail.com",
             subject: "Hy",
             text: "Heloo I am noob user of nodemailer",
             html: "<b>Hello Sir</b>"

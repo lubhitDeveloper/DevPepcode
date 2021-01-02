@@ -1,0 +1,41 @@
+extends base
+block header
+    .profilepg.showcase
+        include header
+        .profile-container
+            .profile-img-container
+                .profile-img
+                    img(src='./images/IMG_20201004_144712.jpg' alt='')
+                .profile-img-name
+                    | Lubhit Malhotra
+            .about-container
+                h2.about-heading
+                    .icon-profile-heading
+                        i.fas.fa-user
+                    |                         About
+                hr.about-hr
+                .input-profile
+                    p.profile-input-para Your Full Name
+                    .input-pf
+                        .icon-profile
+                            i.fas.fa-user
+                        input#profile-name(type='text' placeholder='Full Name' required='')
+                .input-profile
+                    p.profile-input-para Your Email Id
+                    .input-pf
+                        .icon-profile
+                            i.fas.fa-envelope
+                        input#profile-email(type='email' placeholder='Email' required='')
+                .input-profile
+                    p.profile-input-para Your Password
+                    .input-pf
+                        .icon-profile
+                            i.fas.fa-lock
+                        input#profile-password(type='password' placeholder='Password' required='')
+                .profile-buttons
+                    .edit
+                        button.edit-btn EDIT
+                    .save-changes
+                        button.save-btn SAVE CHANGES
+block scripts
+ script(src='./js/profile.js')

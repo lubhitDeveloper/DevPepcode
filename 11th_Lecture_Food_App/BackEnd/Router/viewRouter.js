@@ -1,12 +1,18 @@
 const express= require("express");
-const { getDemoPage, getHomePage, getLoginPage, getSignUpPage, getPlansPage } = require("../Controller/viewController");
+const { isLoggedIn, logout } = require("../Controller/authController");
+const { getHomePage, getLoginPage, getSignUpPage, getPlansPage, getForgotPass, getResetPass, getProfilePage } = require("../Controller/viewController");
 
 const viewRouter= express.Router();
 
-viewRouter.route("").get(getDemoPage);
-viewRouter.route("/home").get(getHomePage);
+viewRouter.use(isLoggedIn);
+
+viewRouter.route("").get(getHomePage);
 viewRouter.route("/login").get(getLoginPage);
+viewRouter.route("/logout").get(logout);
 viewRouter.route("/signup").get(getSignUpPage);
+viewRouter.route("/profile").get(getProfilePage);
 viewRouter.route("/plans").get(getPlansPage);
+viewRouter.route("/forgotpass").get(getForgotPass);
+viewRouter.route("/resetpassword/:token").get(getResetPass);
 
 module.exports= viewRouter;

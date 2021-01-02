@@ -1,25 +1,59 @@
-extends base.pug
-block content
-    .contact-parent
-        .contact-child-form
-            form(action='')
-                .input
-                    .input-heading
-                        | Name
-                    input#name(type='text' name='name' placeholder='Your Name' required='')
-                .input
-                    .input-heading
-                        | Email
-                    input#email(type='email' name='email' placeholder='Your Email' required='')
-                .input
-                    .input-heading
-                        | Password
-                    input#password(type='password' name='password' placeholder='Your Password' required='')
-                .input
-                    .input-heading
-                        | Confirm Password
-                    input#confirm-password(type='password' name='confirm-password' required='')    
-                .button-contact
-                    input#submit(type='submit' value='Sign Up')
+extends base
+block header
+    .signup-showcase.showcase
+        include header
+        .signup-container.login-container
+                h2 FOODERIA
+                p.signup-container-para Sign up to see latest plans and your favourite healthy meals
+                .signup-main.login-main
+                    .social-signup.social
+                        .facebook-in
+                            i.fab.fa-facebook-f
+                            |                         Facebook
+                        .google-in
+                            i.fab.fa-google
+                            |                         Google
+                    .hr
+                        hr
+                        hr
+                    p.or-signup-with Or
+                    .input-login
+                        .icon-login
+                            i.fas.fa-user
+                        input#signup-name(type='text' placeholder='Full Name' required='')
+                    .input-login
+                        .icon-login
+                            i.fas.fa-envelope
+                        input#signup-email(type='email' placeholder='Email' required='')
+                    .input-login
+                        .icon-login
+                            i.fas.fa-lock
+                        input#signup-password(type='password' placeholder='Password' required='')
+                        .show-hide
+                            span.show-text SHOW
+                    .input-login
+                        .icon-login
+                            i.fas.fa-lock
+                        input#signup-cfpassword(type='password' placeholder='Confirm Password' required='')
+                    .check-input-signup
+                        input#checkbox-signup(type='checkbox' required='')
+                        p.check-para-signup
+                            | By signing up you agree with our 
+                            a(href='') Terms
+                            |  , 
+                            a(href='') Data Policy
+                            |  , and 
+                            a(href='') Cookies Policy
+                            |  .
+                    .button-login
+                        // <button class="login-btn">Log In</button>
+                        input#signup-btn(type='submit' value='SIGN UP')
+                        // <a href="#" class="contact-btn">SEND MESSAGE</a>
+                .login-signup
+                    p.login-signup-para
+                        | Have an account?
+                        a.login-signup-btn(href='http://localhost:3000/login') Login
 block scripts
- script(src="./js/signup.js")
+ script(src='./js/signup.js')
+ 
+  

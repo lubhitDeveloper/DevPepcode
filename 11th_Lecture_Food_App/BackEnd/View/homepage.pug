@@ -84,75 +84,8 @@ block content
  .subscription-container
     h2 START EATING HEALTHY TODAY
     .all-subscriptions
-        .subscription
-            .subscription-header
-                h3 PREMIUM
-                .subscription-pricing
-                    span.sub-pricing $199
-                    | /month
-                    p.pricing-para That’s only $6.63 per meal
-            .subscription-features
-                ul.feature-ul
-                    li.feature-li
-                        i.fas.fa-check-circle
-                        | 1 meal every day
-                    li.feature-li
-                        i.fas.fa-check-circle
-                        | Order 24/7
-                    li.feature-li
-                        i.fas.fa-check-circle
-                        | Access to newest creations
-                    li.feature-li
-                        i.fas.fa-check-circle
-                        | Free delivery
-                .subscription-button
-                    a.sub-btn(href='#') I'm hungry
-        .subscription.active
-            .subscription-header
-                h3 PREMIUM
-                .subscription-pricing
-                    span.sub-pricing $199
-                    | /month
-                    p.pricing-para That’s only $6.63 per meal
-            .subscription-features
-                ul.feature-ul
-                    li.feature-li
-                        i.fas.fa-check-circle
-                        | 1 meal every day
-                    li.feature-li
-                        i.fas.fa-check-circle
-                        | Order 24/7
-                    li.feature-li
-                        i.fas.fa-check-circle
-                        | Access to newest creations
-                    li.feature-li
-                        i.fas.fa-check-circle
-                        | Free delivery
-                .subscription-button
-                    a.sub-btn(href='#') I'm hungry
-        .subscription
-            .subscription-header
-                h3 PREMIUM
-                .subscription-pricing
-                    span.sub-pricing $199
-                    | /month
-                    p.pricing-para That’s only $6.63 per meal
-            .subscription-features
-                ul.feature-ul
-                    li.feature-li
-                        i.fas.fa-check-circle
-                        | 1 meal every day
-                    li.feature-li
-                        i.fas.fa-check-circle
-                        | Order 24/7
-                    li.feature-li
-                        i.fas.fa-check-circle
-                        | Access to newest creations
-                    li.feature-li
-                        i.fas.fa-check-circle
-                        | Free delivery
-                .subscription-button
-                    a.sub-btn(href='#') I'm hungry
+        each plan in plans
+            include planCard.pug
  .contact-us-container
     h2 CONTACT US
     .contact-parent

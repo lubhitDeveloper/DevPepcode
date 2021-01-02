@@ -52,7 +52,6 @@
 
 .showcase-li a:hover{
     color: #F63854;
-    text-decoration: underline;
 }
 
 .showcase-li a{
@@ -101,12 +100,16 @@
 .fixed{
     background: white;
     width: 100%;
-    /* position: fixed; */
+    position: fixed;
     z-index: 2;
 }
 
 .fixed a{
     color: #F63854;
+}
+
+.fixed a:hover{
+    color: gray;
 }
 
 .feature-container{
@@ -550,3 +553,4 @@ h2::after {
     margin-top: 2%;
     font-size: 140%;
 }
+

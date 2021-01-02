@@ -1,0 +1,101 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1.0')
+        link(rel='preconnect' href='https://fonts.gstatic.com')
+        link(href='https://fonts.googleapis.com/css2?family=Lato&display=swap' rel='stylesheet')
+        link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css' integrity='sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==' crossorigin='anonymous')
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous")
+        link(rel='stylesheet' href='./css/style.css')
+        link(rel='stylesheet' href='./css/style2.css')
+        title Document
+    body
+        .signup-showcase.showcase
+            .navlinks
+                ul.showcase-ul
+                    li.showcase-li
+                        a(href='') FEATURES
+                    li.showcase-li
+                        a(href='') DETAILS
+                    li.showcase-li
+                        a(href='') REVIEWS
+                    li.showcase-li
+                        a(href='') PLANS
+                    li.showcase-li
+                        a(href='') SIGNUP
+            .signup-container.login-container
+                h2 FOODERIA
+                p.signup-container-para Sign up to see latest plans and your favourite healthy meals
+                .signup-main.login-main
+                    .social-signup.social
+                        .facebook-in
+                            i.fab.fa-facebook-f
+                            |                         Facebook
+                        .google-in
+                            i.fab.fa-google
+                            |                         Google
+                    .hr
+                        hr
+                        hr
+                    p.or-signup-with Or
+                    .input-login
+                        .icon-login
+                            i.fas.fa-user
+                        input#signup-name(type='text' placeholder='Full Name' required='')
+                    .input-login
+                        .icon-login
+                            i.fas.fa-envelope
+                        input#signup-email(type='email' placeholder='Email' required='')
+                    .input-login
+                        .icon-login
+                            i.fas.fa-lock
+                        input#signup-password(type='password' placeholder='Password' required='')
+                        .show-hide
+                            span.show-text SHOW
+                    .input-login
+                        .icon-login
+                            i.fas.fa-lock
+                        input#signup-cfpassword(type='password' placeholder='Confirm Password' required='')
+                    .check-input-signup
+                        input#checkbox-signup(type='checkbox' required='')
+                        p.check-para-signup
+                            | By signing up you agree with our 
+                            a(href='') Terms
+                            |  , 
+                            a(href='') Data Policy
+                            |  , and 
+                            a(href='') Cookies Policy
+                            |  .
+                    .button-login
+                        // <button class="login-btn">Log In</button>
+                        input#signup-btn(type='submit' value='SIGN UP')
+                        // <a href="#" class="contact-btn">SEND MESSAGE</a>
+                .login-signup
+                    p.login-signup-para
+                        | Have an account?
+                        a.login-signup-btn(href='http://localhost:3000/api/user/login') Log In
+        .footer-container
+            .footer-parent
+                ul.footer-ul
+                    li.footer-li
+                        a(href='') About Us
+                    li.footer-li
+                        a(href='') iOS App
+                    li.footer-li
+                        a(href='') Android App
+                ul.social-links-ul
+                    li.social-links-li
+                        a(href='#')
+                            i.fab.fa-facebook
+                    li.social-links-li
+                        a(href='#')
+                            i.fab.fa-twitter-square
+                    li.social-links-li
+                        a(href='#')
+                            i.fab.fa-instagram
+                    li.social-links-li
+                        a(href='#')
+                            i.fab.fa-snapchat-square
+            p.footer-para Copyright © 2019 EVERYONE. All rights reserved.
+        script(src='./js/signup.js')

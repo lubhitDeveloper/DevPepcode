@@ -21,47 +21,35 @@
                 <li class="showcase-li"><a href="">SIGNUP</a></li>
             </ul>
         </div>
-        <div class="login-container">
-            <h2>FOODERIA</h2>
+        <div class="forgot login-container">
+            <h2>Forgot Your Password ?</h2>
             <div class="login-main">
-                <div class="input-login">
+                <p class="forgot-para">Change your password in three easy steps. This will help you to secure your password !</p>
+                <ol class="forgot-ol">
+                    <li class="forgot-li">Enter your email address below.</li>
+                    <li class="forgot-li">Our system will send you a temporary link.</li>
+                    <li class="forgot-li">Use the link to reset password.</li>
+                </ol>
+                <p class="forgot-email-para">Enter your email address</p>
+                <div class="forgot-in input-login">
                     <div class="icon-login">
                         <i class="fas fa-user"></i>
                     </div>
                     <input type="email" id="login-email" placeholder="Email" required>
                 </div>
-                <div class="input-login">
-                    <div class="icon-login">
-                        <i class="fas fa-lock"></i>
-                    </div>
-                    <input type="password" id="login-password" placeholder="Password" required>
-                    <div class="show-hide">
-                        <span class="show-text">SHOW</span>
-                    </div>
-                </div>
-                <a href="http://localhost:3000/api/user/forgetpassword" class="forgot-password-login">Forgot Password?</a>
+                <p class="forgot-email-p">Enter the email address you used during sign up on Fooderia . Then we will email a link to this address.</p>
+            
                 <div class="button-login">
                     <!-- <button class="login-btn">Log In</button> -->
-                    <input type="submit" id="login-btn" value="LOGIN">
+                    <input type="submit" id="forgot-btn" value="SEND RECOVERY EMAIL">
                     <!-- <a href="#" class="contact-btn">SEND MESSAGE</a> -->
-                </div>
-                <p class="or-login-with">Or login with</p>
-                <div class="social">
-                    <div class="facebook-in">
-                        <i class="fab fa-facebook-f"></i>
-                        Facebook
-                    </div>
-                    <div class="google-in">
-                        <i class="fab fa-google"></i>
-                        Google
-                    </div>
                 </div>
             </div>
     
-            <div class="login-signup">
+            <div class="remember login-signup">
                 <p class="login-signup-para">
-                    Don't have an account?
-                    <a href="http://localhost:3000/api/user/signup" class="login-signup-btn">Sign Up</a>
+                    Just Remembered?
+                    <a href="http://localhost:3000/login" class="login-signup-btn">LOGIN</a>
                 </p>
             </div>
         </div>

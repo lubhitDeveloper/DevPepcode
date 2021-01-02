@@ -11,7 +11,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="showcase">
+    <div class="signup-showcase showcase">
         <div class="navlinks">
             <ul class="showcase-ul">
                 <li class="showcase-li"><a href="">FEATURES</a></li>
@@ -21,7 +21,74 @@
                 <li class="showcase-li"><a href="">SIGNUP</a></li>
             </ul>
         </div>
+        <div class="signup-container login-container">
+            <h2>FOODERIA</h2>
+            <p class="signup-container-para">Sign up to see latest plans and your favourite healthy meals</p>
+            <div class="signup-main login-main">
+                <div class="social-signup social">
+                    <div class="facebook-in">
+                        <i class="fab fa-facebook-f"></i>
+                        Facebook
+                    </div>
+                    <div class="google-in">
+                        <i class="fab fa-google"></i>
+                        Google
+                    </div>
+                </div>
+                <div class="hr">
+                    <hr>
+                    <hr>
+                </div>
+                <p class="or-signup-with">Or</p>
+                <div class="input-login">
+                    <div class="icon-login">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <input type="text" id="signup-name" placeholder="Full Name" required>
+                </div>
+                <div class="input-login">
+                    <div class="icon-login">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <input type="email" id="signup-email" placeholder="Email" required>
+                </div>
+                <div class="input-login">
+                    <div class="icon-login">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <input type="password" id="signup-password" placeholder="Password" required>
+                    <div class="show-hide">
+                        <span class="show-text">SHOW</span>
+                    </div>
+                </div>
+                <div class="input-login">
+                    <div class="icon-login">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <input type="password" id="signup-cfpassword" placeholder="Confirm Password" required>
+                </div>
+                <div class="check-input-signup">
+                    <input type="checkbox" id="checkbox-signup" required>
+                    <p class="check-para-signup">By signing up you agree with our <a href="">Terms</a> , <a href="">Data Policy</a> , and <a href="">Cookies Policy</a> .</p>
+                </div>
+                <div class="button-login">
+                    <!-- <button class="login-btn">Log In</button> -->
+                    <input type="submit" id="signup-btn" value="SIGN UP">
+                    <!-- <a href="#" class="contact-btn">SEND MESSAGE</a> -->
+                </div>
+                
+            </div>
+    
+            <div class="login-signup">
+                <p class="login-signup-para">
+                    Have an account?
+                    <a href="http://localhost:3000/api/user/login" class="login-signup-btn">Log In</a>
+                </p>
+            </div>
+        </div>
     </div>
+
+    
 
     <div class="footer-container">
         <div class="footer-parent">
@@ -39,6 +106,8 @@
         </div>
         <p class="footer-para">Copyright © 2019 EVERYONE. All rights reserved.</p>
     </div>
+
+    <script src="./js/signup.js"></script>
 
 </body>
 </html>

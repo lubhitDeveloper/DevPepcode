@@ -1,40 +1,22 @@
-doctype html
-html(lang='en')
-    head
-        meta(charset='UTF-8')
-        meta(name='viewport' content='width=device-width, initial-scale=1.0')
-        link(rel='preconnect' href='https://fonts.gstatic.com')
-        link(href='https://fonts.googleapis.com/css2?family=Lato&display=swap' rel='stylesheet')
-        link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css' integrity='sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==' crossorigin='anonymous')
-        link(rel='stylesheet' href='./css/style.css')
-        link(rel='stylesheet' href='./css/style2.css')
-        title Document
-    body
-        .showcase
-            .navlinks
-                ul.showcase-ul
-                    li.showcase-li
-                        a(href='') FEATURES
-                    li.showcase-li
-                        a(href='') DETAILS
-                    li.showcase-li
-                        a(href='') REVIEWS
-                    li.showcase-li
-                        a(href='') PLANS
-                    li.showcase-li
-                        a(href='') SIGNUP
-            .login-container
+extends base
+block header
+    .signup-showcase.showcase
+        include header
+        .login-container
                 h2 FOODERIA
                 .login-main
                     .input-login
                         .icon-login
-                            i.fas.fa-user
+                            i.fas.fa-envelope
                         input#login-email(type='email' placeholder='Email' required='')
                     .input-login
                         .icon-login
                             i.fas.fa-lock
                         input#login-password(type='password' placeholder='Password' required='')
-                    a.forgot-password-login(href='http://localhost:3000/api/user/forgetpassword') Forgot Password?
+                        .show-hide
+                            span.show-text SHOW
+                    a.forgot-password-login(href='http://localhost:3000/forgotpass') Forgot Password?
+                    span#error-message
                     .button-login
                         // <button class="login-btn">Log In</button>
                         input#login-btn(type='submit' value='LOGIN')
@@ -50,30 +32,6 @@ html(lang='en')
                 .login-signup
                     p.login-signup-para
                         | Don't have an account?
-                        a.login-signup-btn(href='http://localhost:3000/api/user/signup') Sign Up
-        .footer-container
-            .footer-parent
-                ul.footer-ul
-                    li.footer-li
-                        a(href='') About Us
-                    li.footer-li
-                        a(href='') iOS App
-                    li.footer-li
-                        a(href='') Android App
-                ul.social-links-ul
-                    li.social-links-li
-                        a(href='#')
-                            i.fab.fa-facebook
-                    li.social-links-li
-                        a(href='#')
-                            i.fab.fa-twitter-square
-                    li.social-links-li
-                        a(href='#')
-                            i.fab.fa-instagram
-                    li.social-links-li
-                        a(href='#')
-                            i.fab.fa-snapchat-square
-            p.footer-para Copyright © 2019 EVERYONE. All rights reserved.
-
+                        a.login-signup-btn(href='http://localhost:3000/signup') Sign Up 
 block scripts
- script(src="./js/login.js")
+ script(src='./js/login.js')

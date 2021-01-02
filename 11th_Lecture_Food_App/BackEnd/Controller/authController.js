@@ -1,7 +1,34 @@
 const userModel = require("../Model/usersModel");
 const jwt= require("jsonwebtoken");
-const { SECRET_KEY } = require("../config/secrets");
+const { SECRET_KEY, GMAIL_ID, GMAIL_PASS } = require("../config/secrets");
+const nodemailer= require("nodemailer");
 
+
+async function sendEmail(message){
+    try{
+        const transporter= nodemailer.createTransport({
+            service: "gmail",
+            host: "smtp.gmail.com",
+            secure: true,
+            auth: {
+                user: GMAIL_ID,
+                pass: GMAIL_PASS
+             }
+        })
+
+        let res= await transporter.sendMail({
+            from: message.from,
+            to: message.to,
+            subject: message.subject,
+            text: message.text
+            //html: "<b>Hello Sir</b>"
+        });
+        return res;
+    }
+    catch(error){
+        return error;
+    }
+}
 
 async function signup(req, res){
     try{
@@ -36,10 +63,10 @@ async function login(req, res){
             if(user.password == password){
                 //token ban na chahie yhn pr
                 const token= jwt.sign({id: user["_id"]}, SECRET_KEY);
+                res.cookie("jwt", token, {httpOnly: true});
                 res.status(200).json({
                     message:"Succesfully Logged In !!",
                     data: loggedInUser[0],
-                    token
                 })
             }
             else{
@@ -50,7 +77,7 @@ async function login(req, res){
         }
         else{
             res.status(200).json({
-                message:"No User found signup first !!",
+                message:"No user found signup first !!",
             })
         }
     }
@@ -62,9 +89,39 @@ async function login(req, res){
     }
 }
 
+async function logout(req, res){
+    try{
+        res.clearCookie("jwt");
+        res.redirect("/");
+    }
+    catch(error){
+        res.status(501).json({
+            error
+        })
+    }
+}
+
+async function isLoggedIn(req, res, next){
+    try{
+        let token= req.cookies.jwt;
+        const payload= jwt.verify(token , SECRET_KEY);
+        if(payload){
+            let user= await userModel.findById(payload.id);
+            req.name= user.name;
+            next();
+        }
+        else{
+            next();
+        }
+    }
+    catch(error){
+        next();
+    }
+}
+
 async function protectRoute(req, res, next){
     try{
-        const token= req.headers.authorization.split(" ").pop();
+        const token= req.cookies.jwt;
         console.log(token);
         const payload= jwt.verify(token, SECRET_KEY);
         console.log(payload);
@@ -107,7 +164,7 @@ async function isAuthorized(req, res, next){
     }
 }
 
-async function forgetPassword(req, res){
+async function forgotPassword(req, res){
     try{
         let {email}= req.body;
 
@@ -116,10 +173,19 @@ async function forgetPassword(req, res){
         if(user){
             let token= user.createPwToken();
             await user.save({validateBeforeSave: false});
-            let resetLink=`http://localhost:3000/api/user/resetpassword/${token}`
+            let resetLink=`http://localhost:3000/resetpassword/${token}`
+            let message= {
+                from: "lubhitmalhotra12@gmail.com",
+                to: email,
+                subject: "RESET PASSWORD",
+                text: resetLink
+            }
+
+            let response= await sendEmail(message);
+
             res.json({
-                message: "Rest link is sent to email",
-                resetLink
+                message: "Reset link is sent to email",
+                response
             })
         }
         else{
@@ -169,7 +235,9 @@ async function resetPassword(req, res){
 
 module.exports.signup= signup;
 module.exports.login= login;
+module.exports.logout= logout;
 module.exports.protectRoute= protectRoute;
 module.exports.isAuthorized= isAuthorized;
-module.exports.forgetPassword= forgetPassword;
+module.exports.forgotPassword= forgotPassword;
 module.exports.resetPassword= resetPassword;
+module.exports.isLoggedIn= isLoggedIn;
