@@ -18,6 +18,16 @@ signupBtn.addEventListener("click", async function(e){
             }
             let obj= await axios.post("http://localhost:3000/api/user/signup", signupObject);
             console.log(obj);
+            username.value="";
+            email.value="";
+            pw.value="";
+            cpw.value="";
+        }
+        else{
+            username.value="";
+            email.value="";
+            pw.value="";
+            cpw.value="";
         }
     }
     catch(error){

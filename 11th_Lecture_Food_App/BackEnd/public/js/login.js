@@ -12,11 +12,17 @@ loginBtn.addEventListener("click", async function(e){
         if(email.value && loginPass.value){
             let obj= await axios.post("http://localhost:3000/api/user/login", {email: email.value, password: loginPass.value});
             console.log(obj);
+            
+            email.value="";
+            loginPass.value="";
+
             if(obj.data.data){
             window.location.href= "/";
             }
             else{
                 errorMessage.innerHTML= obj.data.message;
+                email.value="";
+                loginPass.value="";
             }
         }
     }

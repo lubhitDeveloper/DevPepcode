@@ -102,8 +102,36 @@ async function deleteUserById(req, res){
     }
 }
 
+async function updateProfilePhoto(req, res){
+    try{
+        let file= req.file;
+        console.log(file);
+
+        let id= req.id;
+
+        let user= await userModel.findById(id);
+        
+        let imgPath= file.destination+"/"+file.filename;
+        imgPath= imgPath.substring(6); 
+        
+        user.pImage= imgPath;
+        await user.save({validateBeforeSave: false});
+        
+        res.status(200).json({
+            message: "Profile photo updated !!"
+        })
+    }
+    catch(error){
+        res.status(200).json({
+            message: "Failed to update photo !!",
+            error
+        })
+    }
+}
+
 module.exports.getAllUsers= getAllUsers;
 module.exports.createUser= createUser;
 module.exports.getUserById= getUserById;
 module.exports.updateUserbyId= updateUserbyId;
 module.exports.deleteUserById= deleteUserById;
+module.exports.updateProfilePhoto= updateProfilePhoto;

@@ -7,10 +7,26 @@ let resetBtn= document.querySelector("#forgot-btn");
 resetBtn.addEventListener("click", async function(e){
     try{
         e.preventDefault();
-        if(pw.value && cpw.value){
-            let obj= await axios.patch("http://localhost:3000/api/user/resetpassword/:token", {password: pw.value, confirmPassword: cpw.value});
+        
+        let screenUrl= document.URL.split("/");
+        let token= screenUrl[screenUrl.length-1];
+        console.log(token);
+
+        if(pw.value&&cpw.value && pw.value==cpw.value){
+            let obj= await axios.patch(`http://localhost:3000/api/user/resetpassword/${token}`, {password: pw.value, confirmPassword: cpw.value});
             console.log(obj);
+            pw.value="";
+            cpw.value="";
+            if(obj.data.user){
+                window.location.href="/";
+            }
+            else{
+                console.log("error");
+                pw.value="";
+                cpw.value="";
+            }
         }
+                
     }
     catch(error){
         console.log(error);

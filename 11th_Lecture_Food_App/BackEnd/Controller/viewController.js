@@ -22,7 +22,7 @@ function getSignUpPage(req, res){
 
 function getProfilePage(req, res){
     try{
-        res.render("profile.pug", {name: req.name});
+        res.render("profile.pug", {name: req.name, user: req.user});
     }
     catch(error){
         console.log(error);

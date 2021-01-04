@@ -348,7 +348,7 @@
     background: rgba(255, 255, 255, 0.04);
     box-shadow: -1px 4px 28px 0px rgba(0, 0, 0, 0.75);
     width: 40rem;
-    height: 48rem;
+    height: 51rem;
     padding: 5% 3% 3% 3%;
     margin: auto;
     margin-top: 5%;
@@ -367,8 +367,9 @@
 }
 
 .profile-img img{
-    width: 40%;
+    width: 130px;
     border-radius: 50%;
+    height: 140px;
 }
 
 .profile-img-name{

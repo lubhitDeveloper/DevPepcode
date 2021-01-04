@@ -5,9 +5,10 @@ block header
         .profile-container
             .profile-img-container
                 .profile-img
-                    img(src='./images/IMG_20201004_144712.jpg' alt='')
+                    img(src=user.pImage alt='User-Image')
+                    input(type="file" name="user" id="user-img")
                 .profile-img-name
-                    | Lubhit Malhotra
+                    | #{user.name}
             .about-container
                 h2.about-heading
                     .icon-profile-heading
@@ -19,19 +20,19 @@ block header
                     .input-pf
                         .icon-profile
                             i.fas.fa-user
-                        input#profile-name(type='text' placeholder='Full Name' required='')
+                        input#profile-name(type='text' value=user.name required='' readonly='')
                 .input-profile
                     p.profile-input-para Your Email Id
                     .input-pf
                         .icon-profile
                             i.fas.fa-envelope
-                        input#profile-email(type='email' placeholder='Email' required='')
+                        input#profile-email(type='email' value=user.email required='' readonly='')
                 .input-profile
                     p.profile-input-para Your Password
                     .input-pf
                         .icon-profile
                             i.fas.fa-lock
-                        input#profile-password(type='password' placeholder='Password' required='')
+                        input#profile-password(type='password' value=user.password required='' readonly='')
                 .profile-buttons
                     .edit
                         button.edit-btn EDIT
