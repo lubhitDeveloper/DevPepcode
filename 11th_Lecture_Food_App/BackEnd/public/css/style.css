@@ -304,6 +304,7 @@ h2::after {
 
 .all-subscriptions{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     min-height: 500px;
     margin-top: 65px;
@@ -379,9 +380,10 @@ h2::after {
     border-radius: 30px;
     width: 50%;
     position: absolute;
-    bottom: -4%;
+    bottom: -7%;
     left: 26%;
     background: #f63854;
+    cursor: pointer;
     transition: transform 0.3s;
 }
 

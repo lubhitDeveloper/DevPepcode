@@ -348,7 +348,7 @@
     background: rgba(255, 255, 255, 0.04);
     box-shadow: -1px 4px 28px 0px rgba(0, 0, 0, 0.75);
     width: 40rem;
-    height: 51rem;
+    height: 47rem;
     padding: 5% 3% 3% 3%;
     margin: auto;
     margin-top: 5%;
@@ -361,15 +361,27 @@
     justify-content: center;
     margin-top: -3%;
 }
+ 
+#user-img{
+    display: none;
+}
 
 .profile-img{
     width: 40%;
 }
 
 .profile-img img{
-    width: 130px;
+    /* width: 130px;
     border-radius: 50%;
-    height: 140px;
+    height: 150px; */
+    cursor: pointer;
+    border-radius: 50%;
+    width: 140px;
+	height: 150px;
+}
+
+.profile-img img:hover{
+   border: 5px solid #222;
 }
 
 .profile-img-name{
@@ -446,6 +458,10 @@
     background: lightgrey;
 }
 
+#profile-password:valid ~ .show-hide{
+    display: flex;
+  }
+
 .profile-buttons{
     
     margin-top: 11%;
@@ -465,6 +481,7 @@
     margin-left: -6px;
     font-size: 125%;
     cursor: pointer;
+    margin-top: -7px;
 }
 
 .edit-btn:hover{
@@ -472,13 +489,14 @@
 }
 
 .save-changes{
-    margin-top: 5%;
+    margin-top: -9%;
     height: 45px;
 }
 
 .save-btn{
+    display: none;
     border: none;
-    background:#3a7cff;
+    background: #DB4437;
     color: aliceblue;
     /* border-radius: 10%; */
     width: 100%;
@@ -489,6 +507,6 @@
 }
 
 .save-btn:hover{
-    background: #3a7cff65;
+    background: #db453744;
 }
 

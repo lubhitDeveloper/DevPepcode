@@ -57,7 +57,7 @@ async function getUserById(req, res){
 async function updateUserbyId(req, res){
     try{
         let id= req.id;
-        let updateUserObj= req.body.updateUserObj;
+        let updateUserObj= req.body;
         let user= await userModel.findById(id);
 
         for(key in updateUserObj){

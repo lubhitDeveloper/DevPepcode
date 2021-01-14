@@ -5,7 +5,7 @@ const stripe= Stripe('pk_test_51I57mWLxKd7kg4sUpCRlJ1nF88bz74i78JUscG9yRcFlwbyeF
 for(let i=0; i<buyPlanButtons.length; i++){
     buyPlanButtons[i].addEventListener("click", async function(){
         try{
-            if(allLis.length6< 6){
+            if(allLis.length< 6){
                 window.location.href= "/login";
             }
             else{
